@@ -12,9 +12,7 @@ pipeline {
 
         stage('Deploy to Nginx') {
             steps {
-                sh '''
-                sudo rsync -av --delete --exclude=".git" ./ /var/www/html/
-                '''
+                sh 'rsync -av --delete ./ /var/www/html/'
             }
         }
 
